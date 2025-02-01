@@ -39,7 +39,9 @@ const port = 3000;
 const studentsData = require('./data.json'); 
 
 app.use(express.json());
-
+app.get('/', (req, res) => {
+    res.sendFile(resolve(__dirname, 'pages/index.html'));
+  });
 // const studentsData = JSON.parse(fs.readFileSync('data.json'));
 
 app.post('/students/above-threshold', (req, res) => {
